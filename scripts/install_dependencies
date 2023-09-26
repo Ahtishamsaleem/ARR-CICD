@@ -8,7 +8,3 @@ sudo yum install -y httpd
 
 # Install PHP and some commonly used extensions
 sudo yum install -y php php-mysqlnd php-fpm php-json php-common php-mbstring php-zip php-gd php-xml php-curl php-pear
-
-# Start and enable Apache to start on boot
-sudo systemctl start httpd
-sudo systemctl enable httpd
