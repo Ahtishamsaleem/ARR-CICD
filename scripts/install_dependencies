@@ -1,15 +1,23 @@
 #!/bin/bash
 
 # Update package lists
-sudo apt-get update
+sudo yum update -y
 
 # Install Apache Web Server
-sudo apt-get install -y apache2
+sudo yum install -y httpd
 
 # Install PHP and some commonly used extensions
-sudo apt-get install -y php libapache2-mod-php php-mysql php-cli php-fpm php-json php-common php-mbstring php-zip php-gd php-xml php-curl php-pear
+sudo yum install -y php php-mysqlnd php-fpm php-json php-common php-mbstring php-zip php-gd php-xml php-curl php-pear
+
+# Start and enable Apache to start on boot
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+# If using php-fpm
+# sudo systemctl start php-fpm
+# sudo systemctl enable php-fpm
 
 # Optionally, install Composer, PHP's dependency manager
 cd /tmp
 curl -sS https://getcomposer.org/installer -o composer-setup.php
-sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+php composer-setup.php --install-dir=/usr/local/bin --filename=composer
