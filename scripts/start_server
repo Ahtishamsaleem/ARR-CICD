@@ -1,3 +1,15 @@
-chmod +x install_dependencies.sh
-chmod +x start_server.sh
-chmod +x stop_server.sh
+#!/bin/bash
+
+# Start the Apache Web Server
+sudo systemctl start apache2
+
+# If you're using php-fpm (common with Nginx, but possible with Apache):
+# sudo systemctl start php7.4-fpm
+# Replace "php7.4-fpm" with your PHP version if different
+
+# Ensure Apache is set to start on boot
+sudo systemctl enable apache2
+
+# If using php-fpm, also ensure it starts on boot:
+# sudo systemctl enable php7.4-fpm
+
