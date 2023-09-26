@@ -1,7 +1,2 @@
-#!/bin/bash
-
-# Stop Apache
+echo "Stopping httpd" >> /tmp/deploy.log
 sudo systemctl stop httpd
-
-# If you use php-fpm:
-# sudo systemctl stop php-fpm
