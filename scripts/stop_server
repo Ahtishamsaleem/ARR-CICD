@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Stop Apache
-sudo systemctl stop apache2
+sudo systemctl stop httpd
 
-# If you use php-fpm separately:
-# sudo systemctl stop php7.4-fpm
+# If you use php-fpm:
+# sudo systemctl stop php-fpm
